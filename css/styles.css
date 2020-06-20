@@ -34,8 +34,35 @@ body {
   padding:16px 24px;
   max-width:60%;
   line-height:1.8;
+  position:relative;
 }
 
+.text::before {
+  content:'';
+    /* テキスト要素の前に置く内容 */
+  width:0;
+  height:0;
+  /* border:8px solid #fff; */
+  border:8px solid transparent;
+  /* transparent 透明 */
+  position:absolute;
+}
+
+.left-side .text::before {
+  top:12px;
+  /* 上から12px */
+  left:-16px;
+  /* 左側16pxに飛び出す */
+  border-right-color:#fff;
+}
+
+.right-side .text::before {
+  top:12px;
+  /* 上から12px */
+  right:-16px;
+  /* 左側16pxに飛び出す */
+  border-left-color:#fff;
+}
 
 li.right-side {
   flex-direction:row-reverse;
@@ -47,3 +74,12 @@ li.right-side {
   width:80px;
   text-align:center;
 }
+
+.box {
+  width:0px;
+  height:0px;
+  border:40px solid black;
+  border-right-color:red;
+  /* 吹き出しの三角形を作る */
+}
+
